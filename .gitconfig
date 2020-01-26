@@ -1,0 +1,24 @@
+[alias]
+	st = status
+	cm = commit
+	cmm = commit -m
+	cmam = commit -am
+	cma = commit --amend --no-edit
+	cmaa = commit -a --amend --no-edit
+	stt = status -uno
+	d = diff
+	dd = diff --word-diff
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	co = checkout
+	br = branch
+	cp = cherry-pick
+[core]
+	excludesfile = /Users/wantedly/.gitignore_global
+[fetch]
+	prune = true
+[merge]
+	tool = vimdiff
+[push]
+	default=simple
+[include]
+  path = ~/.gitconfig.local
