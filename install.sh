@@ -36,6 +36,9 @@ brew cask install karabiner-elements
 # AquaSKK
 brew cask install aquaskk
 
+# iTerm2
+brew cask install iterm2
+
 # make links
 for f in .??*
 do
