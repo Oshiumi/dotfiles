@@ -1,4 +1,4 @@
-sex -eu
+set -eu
 
 # Install Homebrew
 if type brew > /dev/null 2>&1; then
