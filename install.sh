@@ -48,6 +48,11 @@ do
         [[ ! -e ~/$f ]] && touch ~/$f
         continue
     fi
+    if [[ "$f" == ".config" ]]; then
+        [[ ! -e ~/.config ]] && mkdir ~/.config
+        cp -rf .config ~/.config
+        continue
+    fi
 
     [[ ! -e ~/$f ]] && ln -s $f ~/$f
 done
