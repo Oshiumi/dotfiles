@@ -50,12 +50,18 @@ do
     fi
     if [[ "$f" == ".config" ]]; then
         [[ ! -e ~/.config ]] && mkdir ~/.config
-        cp -rf .config ~/.config
+        [[ ! -e ~/.config/karabiner ]] && mkdir ~/.config/karabiner
+        ln -s `pwb`/karabiner/karabiner.json ~/.config/karabiner/karabiner.json
         continue
     fi
 
-    [[ ! -e ~/$f ]] && ln -s $f ~/$f
+    [[ ! -e ~/$f ]] && ln -s `pwb`$f ~/$f
 done
+
+# zsh
+echo '/usr/local/bin/zsh' >> /etc/shells
+chsh -s /usr/local/bin/zsh
+exec $SHELL -l
 
 # Ruby
 brew install rbenv
