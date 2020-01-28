@@ -2,12 +2,12 @@ sex -eu
 
 # Install Homebrew
 if type brew > /dev/null 2>&1; then
+    echo 'Homebrew has already been installed.'
+else
     echo 'Install Homebrew'
     set -x
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     set +x
-else
-    echo 'Homebrew has already been installed.'
 fi
 
 set -x
