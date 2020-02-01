@@ -39,6 +39,15 @@ brew cask install aquaskk
 # iTerm2
 brew cask install iterm2
 
+# zsh
+sudo chsh -s /bin/zsh
+
+# oh-my-zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+# peco
+brew install peco
+
 # make links
 for f in .??*
 do
@@ -59,11 +68,3 @@ do
     [[ ! -e ~/$f ]] && ln -s `pwd`/$f ~/$f
 done
 
-# zsh
-sudo echo '/usr/local/bin/zsh' >> /etc/shells
-sudo chsh -s /usr/local/bin/zsh
-exec $SHELL -l
-
-# Ruby
-brew install rbenv
-rbenv init
