@@ -59,8 +59,8 @@ do
 done
 
 # zsh
-echo '/usr/local/bin/zsh' >> /etc/shells
-chsh -s /usr/local/bin/zsh
+sudo echo '/usr/local/bin/zsh' >> /etc/shells
+sudo chsh -s /usr/local/bin/zsh
 exec $SHELL -l
 
 # Ruby
