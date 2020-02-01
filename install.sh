@@ -51,11 +51,11 @@ do
     if [[ "$f" == ".config" ]]; then
         [[ ! -e ~/.config ]] && mkdir ~/.config
         [[ ! -e ~/.config/karabiner ]] && mkdir ~/.config/karabiner
-        ln -s `pwd`/karabiner/karabiner.json ~/.config/karabiner/karabiner.json
+        [[ ! -e ~/.config/karabiner/karabiner.json ]] && ln -s `pwd`/karabiner/karabiner.json ~/.config/karabiner/karabiner.json
         continue
     fi
 
-    [[ ! -e ~/$f ]] && ln -s `pwd`$f ~/$f
+    [[ ! -e ~/$f ]] && ln -s `pwd`/$f ~/$f
 done
 
 # zsh
