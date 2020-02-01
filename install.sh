@@ -43,7 +43,7 @@ brew cask install iterm2
 for f in .??*
 do
     [[ "$f" == ".git" ]] && continue
-    [[ "$f" == ".gitmodules"]] && continue
+    [[ "$f" == ".gitmodules" ]] && continue
     [[ "$f" == ".DS_Store" ]] && continue
     if [[ "$f" =~ \.env$ ]]; then
         [[ ! -e ~/$f ]] && touch ~/$f
