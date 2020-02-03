@@ -68,3 +68,8 @@ do
     [[ ! -e ~/$f ]] && ln -s `pwd`/$f ~/$f
 done
 
+
+# KeyRepeat (for macOS)
+defaults write -g InitialKeyRepeat -int 15
+defaults write -g KeyRepeat -int 2
+
