@@ -61,7 +61,7 @@ do
     if [[ "$f" == ".config" ]]; then
         [[ ! -e ~/.config ]] && mkdir ~/.config
         [[ ! -e ~/.config/karabiner ]] && mkdir ~/.config/karabiner
-        [[ ! -e ~/.config/karabiner/karabiner.json ]] && ln -s `pwd`/karabiner/karabiner.json ~/.config/karabiner/karabiner.json
+        [[ ! -e ~/.config/karabiner/karabiner.json ]] && cp `pwd`/karabiner/karabiner.json ~/.config/karabiner/karabiner.json
         continue
     fi
 
