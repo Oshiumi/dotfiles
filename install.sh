@@ -70,6 +70,8 @@ done
 
 
 # KeyRepeat (for macOS)
-defaults write -g InitialKeyRepeat -int 15
-defaults write -g KeyRepeat -int 2
+if [ "$(uname)" == "Darwin" ]; then
+    defaults write -g InitialKeyRepeat -int 15
+    defaults write -g KeyRepeat -int 2
+fi
 
