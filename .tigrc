@@ -1,3 +1,4 @@
 bind status  + !git commit --amend
 bind main    R !git rebase -i %(commit)
 bind diff    R !git rebase -i %(commit)
+bind main    ! ?git revert %(commit)
