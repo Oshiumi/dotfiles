@@ -39,14 +39,21 @@ brew cask install aquaskk
 # iTerm2
 brew cask install iterm2
 
+# Alfred
+brew cask install alfred
+
 # zsh
 sudo chsh -s /bin/zsh
 
 # oh-my-zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+[[ ! -e ~/.oh-my-zsh ]] && sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-# peco
-brew install peco
+# command line tools
+brew install \
+     peco \
+     ag \
+     jq
+
 
 # make links
 for f in .??*
@@ -61,7 +68,7 @@ do
     if [[ "$f" == ".config" ]]; then
         [[ ! -e ~/.config ]] && mkdir ~/.config
         [[ ! -e ~/.config/karabiner ]] && mkdir ~/.config/karabiner
-        [[ ! -e ~/.config/karabiner/karabiner.json ]] && cp `pwd`/karabiner/karabiner.json ~/.config/karabiner/karabiner.json
+        [[ ! -e ~/.config/karabiner/karabiner.json ]] && cp `pwd`/.config/karabiner/karabiner.json ~/.config/karabiner/karabiner.json
         continue
     fi
 
