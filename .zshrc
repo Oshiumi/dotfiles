@@ -43,6 +43,7 @@ ZSH_THEME="wezm"
 # stamp shown in the history command output.
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # HIST_STAMPS="mm/dd/yyyy"
+HISTFILE=$HOME/Dropbox/.zsh_history
 setopt share_history
 setopt hist_ignore_all_dups
 
