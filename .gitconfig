@@ -12,6 +12,9 @@
 	co = checkout
 	br = branch
 	cp = cherry-pick
+[diff]
+	algorithm = "histogram"
+	indentHeuristic = true
 [core]
 	excludesfile = /Users/wantedly/.gitignore_global
 [fetch]
