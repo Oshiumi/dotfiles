@@ -178,5 +178,6 @@ function installdmg {
     set +x
 }
 
+alias gco='git br | peco | xargs git co'
 # Write environment specific setting in ~/.zshrc.env
 source ~/.zshrc.env
