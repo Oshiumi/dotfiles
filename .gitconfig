@@ -16,7 +16,7 @@
 	algorithm = "histogram"
 	indentHeuristic = true
 [core]
-	excludesfile = /Users/wantedly/.gitignore_global
+	excludesfile = ~/.gitignore_global
 [fetch]
 	prune = true
 [merge]
