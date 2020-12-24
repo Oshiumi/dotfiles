@@ -5,5 +5,5 @@ brew install rbenv
 brew install ruby-build
 
 # As an rbenv plugin
-mkdir -p "$(rbenv root)"/plugins
-git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build
+[[ ! -e "$(rbenv root)"/plugins ]] mkdir -p "$(rbenv root)"/plugins
+[[ ! -e "$(rbenv root)"/plugins/ruby-build ]] git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build
