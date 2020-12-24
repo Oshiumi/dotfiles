@@ -26,7 +26,7 @@ set -x
 # emacs
 brew tap d12frosted/emacs-plus
 brew install emacs-plus
-[[ ! -e /Applications/Emacs.app ]] && ln -s /usr/local/Cellar/emacs-plus/*/Emacs.app/ /Applications/
+[[ ! -h /Applications/Emacs.app ]] && ln -s /usr/local/Cellar/emacs-plus/*/Emacs.app/ /Applications/
 
 # spacemacs
 [[ ! -e ~/.emacs.d ]] && git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
