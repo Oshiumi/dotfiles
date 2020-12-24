@@ -178,10 +178,12 @@ function installdmg {
     set +x
 }
 
-alias gco='git br | peco | xargs git co'
+alias gco="git --no-pager reflog | awk '$3 == \"checkout:\" && /moving from/ {print $8}' | grep -vE '(develop|master)' | uniq | head -n 20 | peco | xargs git checkout"
+
 # Write environment specific setting in ~/.zshrc.env
 source ~/.zshrc.env
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
 

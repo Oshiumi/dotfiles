@@ -1,3 +1,6 @@
+# rbenv
+brew install rbenv
+
 # Using Homebrew on macOS
 brew install ruby-build
 

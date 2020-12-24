@@ -7,6 +7,7 @@ else
     echo 'Install Homebrew'
     set -x
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
     set +x
 fi
 

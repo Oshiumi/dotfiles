@@ -1,3 +1,7 @@
+def me
+  User.find(39930941)
+end
+
 def decode_cookie(cookie_orig)
   config = Rails.application.config
   app = config.session_store.new(nil, config.session_options)
