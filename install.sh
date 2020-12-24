@@ -42,6 +42,9 @@ brew cask install iterm2
 # Alfred
 brew cask install alfred
 
+# Dash
+brew cask install dash
+
 # zsh
 sudo chsh -s /bin/zsh
 
