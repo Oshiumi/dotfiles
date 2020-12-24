@@ -30,6 +30,8 @@ brew install emacs-plus
 
 # spacemacs
 [[ ! -e ~/.emacs.d ]] && git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+[[ ! -e ~/.spacemacs.d ]] && git clone https://github.com/Oshiumi/.spacemacs.d.git ~/.spacemacs.d
+
 
 # karabiner-elements
 brew install --cask karabiner-elements
@@ -76,6 +78,10 @@ do
         [[ ! -e ~/.config ]] && mkdir ~/.config
         [[ ! -e ~/.config/karabiner ]] && mkdir ~/.config/karabiner
         [[ ! -e ~/.config/karabiner/karabiner.json ]] && cp `pwd`/.config/karabiner/karabiner.json ~/.config/karabiner/karabiner.json
+        continue
+    fi
+    if [[ "$f" == ".spacemacs.d" ]]; then
+        ln `pwd`/.spacemacs.d/.spacemacs.env ~/.spacemacs.d/.spacemacs.env
         continue
     fi
 
