@@ -32,19 +32,19 @@ brew install emacs-plus
 [[ ! -e ~/.emacs.d ]] && git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 
 # karabiner-elements
-brew cask install karabiner-elements
+brew install --cask karabiner-elements
 
 # AquaSKK
-brew cask install aquaskk
+brew install --cask aquaskk
 
 # iTerm2
-brew cask install iterm2
+brew install --cask iterm2
 
 # Alfred
-brew cask install alfred
+brew install --cask alfred
 
 # Dash
-brew cask install dash
+brew install --cask dash
 
 # zsh
 sudo chsh -s /bin/zsh
