@@ -6,7 +6,7 @@ if type brew > /dev/null 2>&1; then
 else
     echo 'Install Homebrew'
     set -x
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
     set +x
 fi
@@ -61,7 +61,8 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 brew install \
      peco \
      ag \
-     jq
+     jq \
+     tig
 
 
 # make links
