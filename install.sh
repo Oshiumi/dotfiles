@@ -40,12 +40,12 @@ else
     echo 'Install Homebrew'
     set -x
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    echo 'eval $(/opt/homebrew/bin/brew shellenv)' >> /Users/taichioshiumi/.zshrc.env
+    eval $(/opt/homebrew/bin/brew shellenv)
     set +x
 fi
 
 set -x
-echo 'eval $(/opt/homebrew/bin/brew shellenv)' >> /Users/taichioshiumi/.zshrc.env
-eval $(/opt/homebrew/bin/brew shellenv)
 brew update
 set +x
 
