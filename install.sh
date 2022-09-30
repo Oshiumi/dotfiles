@@ -53,6 +53,9 @@ brew install --cask aquaskk
 # iTerm2
 brew install --cask iterm2
 
+# raycast
+brew install --cask raycast
+
 # zsh
 [[ ! -e /bin/zsh ]] && sudo chsh -s /bin/zsh
 
