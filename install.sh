@@ -1,5 +1,38 @@
 set -eu
 
+# make links
+for f in .??*
+do
+    [[ "$f" == ".git" ]] && continue
+    [[ "$f" == ".gitmodules" ]] && continue
+    [[ "$f" == ".DS_Store" ]] && continue
+    if [[ "$f" =~ \.env$ ]]; then
+        [[ ! -e ~/$f ]] && touch ~/$f
+        continue
+    fi
+    if [[ "$f" == ".config" ]]; then
+        [[ ! -e ~/.config ]] && mkdir ~/.config
+        [[ ! -e ~/.config/karabiner ]] && mkdir ~/.config/karabiner
+        [[ ! -e ~/.config/karabiner/karabiner.json ]] && cp `pwd`/.config/karabiner/karabiner.json ~/.config/karabiner/karabiner.json
+        continue
+    fi
+    if [[ "$f" == ".spacemacs.d" ]]; then
+        ln `pwd`/.spacemacs.d/.spacemacs.env ~/.spacemacs.d/.spacemacs.env
+        continue
+    fi
+
+    [[ ! -e ~/$f ]] && ln -s `pwd`/$f ~/$f
+done
+
+[[ ! -e ~/.zshrc.env ]] && touch ~/.zshrc.env
+
+
+# KeyRepeat (for macOS)
+if [ "$(uname)" == "Darwin" ]; then
+    defaults write -g InitialKeyRepeat -int 15
+    defaults write -g KeyRepeat -int 2
+fi
+
 # Install Homebrew
 if type brew > /dev/null 2>&1; then
     echo 'Homebrew has already been installed.'
@@ -7,11 +40,12 @@ else
     echo 'Install Homebrew'
     set -x
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
     set +x
 fi
 
 set -x
+echo 'eval $(/opt/homebrew/bin/brew shellenv)' >> /Users/taichioshiumi/.zshrc.env
+eval $(/opt/homebrew/bin/brew shellenv)
 brew update
 set +x
 
@@ -63,36 +97,3 @@ brew install \
      ag \
      jq \
      tig
-
-
-# make links
-for f in .??*
-do
-    [[ "$f" == ".git" ]] && continue
-    [[ "$f" == ".gitmodules" ]] && continue
-    [[ "$f" == ".DS_Store" ]] && continue
-    if [[ "$f" =~ \.env$ ]]; then
-        [[ ! -e ~/$f ]] && touch ~/$f
-        continue
-    fi
-    if [[ "$f" == ".config" ]]; then
-        [[ ! -e ~/.config ]] && mkdir ~/.config
-        [[ ! -e ~/.config/karabiner ]] && mkdir ~/.config/karabiner
-        [[ ! -e ~/.config/karabiner/karabiner.json ]] && cp `pwd`/.config/karabiner/karabiner.json ~/.config/karabiner/karabiner.json
-        continue
-    fi
-    if [[ "$f" == ".spacemacs.d" ]]; then
-        ln `pwd`/.spacemacs.d/.spacemacs.env ~/.spacemacs.d/.spacemacs.env
-        continue
-    fi
-
-    [[ ! -e ~/$f ]] && ln -s `pwd`/$f ~/$f
-done
-
-
-# KeyRepeat (for macOS)
-if [ "$(uname)" == "Darwin" ]; then
-    defaults write -g InitialKeyRepeat -int 15
-    defaults write -g KeyRepeat -int 2
-fi
-
