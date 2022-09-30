@@ -6,7 +6,8 @@ if [ "$(uname)" == "Darwin" ]; then
     defaults write -g KeyRepeat -int 2
 fi
 
-[[ ! -e ~/.zshrc ]] && ln ~/dotfiles/.zshrc ~/.zshrc
+[[ ! -e ~/.zshrc ]] &&
+ln ~/dotfiles/.zshrc ~/.zshrc
 [[ ! -e ~/.zshrc.env ]] && touch ~/.zshrc.env
 
 # Install Homebrew
@@ -52,20 +53,14 @@ brew install --cask aquaskk
 # iTerm2
 brew install --cask iterm2
 
-# Alfred
-brew install --cask alfred
-
-# Dash
-brew install --cask dash
-
 # zsh
-sudo chsh -s /bin/zsh
+[[ ! -e /bin/zsh ]] && sudo chsh -s /bin/zsh
 
 # oh-my-zsh
 [[ ! -e ~/.oh-my-zsh ]] && sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # zsh theme (powelevel10k)
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+[[ ! -e ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k ]] && git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
 # command line tools
 brew install \
