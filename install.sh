@@ -70,7 +70,8 @@ brew install \
      peco \
      ag \
      jq \
-     tig
+     tig \
+     gh
 
 # make links
 for f in .??*
