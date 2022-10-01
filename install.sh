@@ -56,6 +56,15 @@ brew install --cask iterm2
 # raycast
 brew install --cask raycast
 
+# slack
+brew install --cask slack
+
+# VIA
+brew install --cask via
+
+# 1password
+brew install --cask 1password
+
 # zsh
 [[ ! -e /bin/zsh ]] && sudo chsh -s /bin/zsh
 
